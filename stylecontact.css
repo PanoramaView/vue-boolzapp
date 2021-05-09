@@ -184,6 +184,7 @@ button{
     pointer-events: auto;
 }
 .contacts_list{
+    font-size: inherit;
 }
 .contact_box_left{
     padding: 0 15px 0 13px;

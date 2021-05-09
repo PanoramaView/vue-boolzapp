@@ -74,7 +74,8 @@
                                     <div class="contacts_list">
                                         <!-- SINGLE CHAT -->
                                         <div class="contact_box " 
-                                        v-for="(user, index) in usersList">
+                                        v-for="(user, index) in usersList"
+                                        @click="onUserClick(user)">
                                             <div class="contact_box2">
                                                 <div class="contact_box_left ">
                                                     <div class="contact_propic_box">
@@ -135,7 +136,7 @@
                             </div>
                             <div class="mp_contact_name_box">
                                 <div class="mp_contact_name_up">
-                                    <div class="mp_contact_name">Helen {{activeUser}}</div>
+                                    <div class="mp_contact_name">{{activeUser.name}}</div>
                                 </div>
                                 <div class="mp_contact_name_down">
                                     <span class="mp_status">online</span>
@@ -146,7 +147,7 @@
                                 <div class="mp_settings_box">
                                     <div class="mp_settings_option_box">
                                         <div class="mp_settings_option">
-                                            <button class="mp_searchButton" @click>
+                                            <button class="mp_searchButton" @click="onUserClick(user)">
                                                 <i class="fa fa-search" aria-hidden="true"></i>
                                             </button>
                                         </div>
