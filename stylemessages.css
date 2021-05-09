@@ -1,0 +1,36 @@
+/* RIGHT PANEL - MESSAGES */
+
+.messages_section{
+    flex: 60%;
+    position: relative;
+    z-index: 100;
+    height: 100%;
+    overflow: hidden;
+}
+.messages_panel_box{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #e5ddd5;   
+}
+
+.mp_header_selected_user{
+    padding: 10px 16px;
+    display: flex;
+    position: relative;
+    background-color: #ededed;
+    align-items: center;
+    width: 100%;
+    height: 59px;
+}
+.mp_user_propic_box{
+    padding-right: 15px;
+    cursor: pointer;
+}
+
+.mp_status{
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
