@@ -1,6 +1,6 @@
 const globalUsersList = [
     {
-        name: 'Michele',
+        name: 'Love ❤',
         avatar: '_1',
         visible: true,
         messages: [
@@ -81,4 +81,111 @@ const globalUsersList = [
             }
         ],
     },
+    {
+        name: 'Luisa',
+        avatar: '_5',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'Luisa',
+        avatar: '_6',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'Luisa',
+        avatar: '_7',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'x',
+        avatar: '_8',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'Michele',
+        avatar: '_9',
+        visible: true,
+        messages: [
+            {
+                date: '13/08/2020 15:30:55',
+                text: 'Hai portato a spasso il cane?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Ricordati di dargli da mangiare',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 16:15:22',
+                text: 'Tutto fatto!',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'x',
+        avatar: '10',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    }
 ];

@@ -41,19 +41,15 @@ body{
     height: inherit;
     overflow: hidden;
     background-color: lightcyan;
+    min-width: 260px;
 }
 .ContactsPanel_box{
     display: flex;
     flex-direction: column;
     height: 100%;
+    
 }
-.ChatPanel{
-    flex: 70%;
-    position: relative;
-    z-index: 100;
-    height: 100%;
-    overflow: hidden;
-}
+
 .header_user{
     position: relative;
     z-index: 1000;
@@ -123,37 +119,45 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-.searchInput_box{
-    background-color: black;
-}
+
 .searchInput_section{
+    flex: none;
+}
+.searchInput_section_box{
     background-color: #f6f6f6;
+    border-bottom: 1px solid #242d32;
     position: relative;
     z-index: 100;
-    box-sizing: border-box;
-    flex: none;
+    flex: 1;
     height: 49px;
+    padding: 5px 12px;
 }
 .searchInput_section button{
     left: 24px;
     position: absolute;
     top: 12px;
     z-index: 100;
-    width: 24px;
     height: 24px;
+    width: 24px;
+    flex: 1;
 }
-.searchInput_section input{
-    right: 14px;
-    left: 12px;
-    padding-right: 32px;
+.searchInput_section i {
+    font-size: 14px;
+}
+.searchInput_box{
+    font-size: inherit;
+}
+.searchInput{
     padding-left: 65px;
-    position: absolute;
+    width: 100%;
     top: 7px;
-    display: flex;
     align-items: center;
     height: 35px;
     background-color: #fff;
     border-radius: 18px;
+    outline: none;
+    overflow: hidden;
+    font-size: 14px;
 }
 
 button{
@@ -164,7 +168,7 @@ button{
     border: 0;
 }
 
-.contacts_section{
+.contactslist_section{
     z-index: 1;
     flex-grow: 1;
     overflow-y: auto;
@@ -177,9 +181,11 @@ button{
     font-size: inherit;
 }
 .contactslist_box2{
-    position: relative;
-    overflow: hidden;
-}.contact_box_left{
+    pointer-events: auto;
+}
+.contacts_list{
+}
+.contact_box_left{
     padding: 0 15px 0 13px;
     display: flex;
     flex: none;
@@ -225,7 +231,7 @@ button{
 }
 .contact_box_right{
     padding-right: 15px;
-    border-top: 1px solid #f2f2f2;
+    border-top: 1px solid #e6e6e6;
     display: flex;
     flex-basis: auto;
     flex-direction: column;
@@ -284,7 +290,9 @@ button{
     font-size: 12px;
     line-height: 20px;
 }
-
+i {
+    color: #919191;
+}
 
 
 

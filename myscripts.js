@@ -2,10 +2,10 @@ const app = new Vue({
     el: "#app",
     data: {
         usersList: globalUsersList,
-        selectedUser: 0,
+        activeUser: 0,
         indexUser: 0
     },
-    comoputed:{
+    computed:{
 
     },
     methods:{
@@ -15,5 +15,8 @@ const app = new Vue({
         onUserClick(user){
             index= user
         }
+    },
+    mounted:{
+
     }
 })

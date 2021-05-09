@@ -24,10 +24,10 @@
 <body>
     <div id="app">
         <div tabindex="-1" class="box1 ">
-            <div class="box2 border">
+            <div class="box2">
                 <div class="ContactsPanel">
                     <div class="ContactsPanel_box">
-                        <header class="header_user border">
+                        <header class="header_user">
                             <div class="user_section border">
                                 <div class="box_user">
                                     <div class="box2_user">
@@ -56,9 +56,14 @@
                             </div>
                         </div>
                         <div tabindex="-1" class="searchInput_section">
-                            <div class="searchInput_box">
-                                <button class=""></button>
-                                <input type="text">
+                            <div class="searchInput_section_box">
+                                <button class="searchButton" @click>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                                <div class="searchInput_box">
+                                    <input class="searchInput" placeholder="Search or start new chat" type="text">
+                                </div>
+                                
                             </div>
                         </div>
 
@@ -68,7 +73,7 @@
                                 <div class="contactslist_box2">
                                     <div class="contacts_list">
                                         <!-- SINGLE CHAT -->
-                                        <div class="contact_box border" 
+                                        <div class="contact_box " 
                                         v-for="(user, index) in usersList">
                                             <div class="contact_box2">
                                                 <div class="contact_box_left ">
@@ -115,43 +120,86 @@
                 </div>
 
                 <!-- CHAT MESSAGES PANEL -->
-                <div class="ChatPanel bg_grey border">
+                <div class="ChatPanel">
+                    <div></div>
                     <div class="messages_section">
-                        <div class="messages_panel_box">
-                            <!-- CHAT PANEL HEADER -->
-                            <header class="mp_header_selected_user">
-                                <div class="mp_user_propic_box border">
-                                    <div class="mp_box_user">
-                                        <div class="mp_box2_user">
-                                            <img src="" alt="">
+
+                        <!-- CHAT SECTION HEADER -->
+                        <header class="mp_header_selected_user">
+                            <div class="mp_user_propic_box">
+                                <div class="mp_box_user">
+                                    <div class="mp_box2_user">
+                                        <img :src="`img/avatar${activeUser.avatar}.jpg`" class="contact_propic">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mp_contact_name_box">
+                                <div class="mp_contact_name_up">
+                                    <div class="mp_contact_name">Helen {{activeUser}}</div>
+                                </div>
+                                <div class="mp_contact_name_down">
+                                    <span class="mp_status">online</span>
+                                </div>
+                                
+                            </div>
+                            <div class="mp_settings_section">
+                                <div class="mp_settings_box">
+                                    <div class="mp_settings_option_box">
+                                        <div class="mp_settings_option">
+                                            <button class="mp_searchButton" @click>
+                                                <i class="fa fa-search" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mp_settings_option_box">
+                                        <div class="mp_settings_option"><div class="mp_settings_option">
+                                            <button class="mp_ellipsis" @click>
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </button>
+                                        </div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+
+                        <!-- CHAT SECTION MESSAGES -->
+                        <div class="messages_section_box">
+                            <div></div>
+                        </div>
+
+                        <!-- CHAT SECTION WRITING -->
+                        <footer class="messages_writing_section">
+                            <div class="mw_flex">
+                                <div class="mw_left_options">
+                                    <div class="mw_left_options_flex">
+                                        <div class="mw_emoji_box">
+                                            <button>
+                                                <i class="fa fa-smile-o" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                        <div class="mw_attach_box">
+                                            <button>
+                                                <i class="fa fa-paperclip" aria-hidden="true"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mp_contact_name_box">
-                                    <div class="mp_contact_name_up">
-                                        <div class="mp_contact_name">Helen</div>
+                                <div class="mw_center_writing">
+                                    <div class="mw_searchInput_box">
+                                        <input class="mw_searchInput" placeholder="Type a message" type="text">
                                     </div>
-                                    <div class="mp_contact_name_down">
-                                        <span class="mp_status"></span>
+                                </div>
+                                <div class="mw_right_mic">
+                                    <div>
+                                        <button>
+                                        <i class="fa fa-microphone" aria-hidden="true"></i>
+                                    </button>
                                     </div>
                                     
                                 </div>
-                                <div class="mp_settings_section border">
-                                    <div class="mp_settings_box">
-                                        <div class="mp_settings_option_box">
-                                            <div class="mp_settings_option"><span></span></div>
-                                        </div>
-                                        <div class="mp_settings_option_box">
-                                            <div class="mp_settings_option"><span></span></div>
-                                        </div>
-                                        <div class="mp_settings_option_box">
-                                            <div class="mp_settings_option"><span></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </header>
-                            <div></div>
-                        </div>
+                            </div>
+                        </footer>
+
                     </div>
                 </div>
             </div>
