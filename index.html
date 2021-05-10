@@ -28,10 +28,10 @@
                 <div class="ContactsPanel">
                     <div class="ContactsPanel_box">
                         <header class="header_user">
-                            <div class="user_section border">
+                            <div class="user_section">
                                 <div class="box_user">
-                                    <div class="box2_user">
-                                        <img src="" alt="">
+                                    <div class="mp_box2_user">
+                                        <img src="img/me.PNG" class="contact_propic">
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                 <div class="searchInput_box">
                                     <input class="searchInput" placeholder="Search or start new chat" type="text">
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -73,9 +73,8 @@
                                 <div class="contactslist_box2">
                                     <div class="contacts_list">
                                         <!-- SINGLE CHAT -->
-                                        <div class="contact_box " 
-                                        v-for="(user, index) in usersList"
-                                        @click="onUserClick(user)">
+                                        <div class="contact_box " v-for="(user, index) in usersList"
+                                            @click="onUserClick(user)">
                                             <div class="contact_box2">
                                                 <div class="contact_box_left ">
                                                     <div class="contact_propic_box">
@@ -122,7 +121,11 @@
 
                 <!-- CHAT MESSAGES PANEL -->
                 <div class="ChatPanel">
-                    <div></div>
+                    <!-- <div class="empty_panel" v-if="activeUser== 'null'">
+                        <div>
+                            Keep your phone connected
+                        </div>
+                    </div> -->
                     <div class="messages_section">
 
                         <!-- CHAT SECTION HEADER -->
@@ -141,7 +144,7 @@
                                 <div class="mp_contact_name_down">
                                     <span class="mp_status">online</span>
                                 </div>
-                                
+
                             </div>
                             <div class="mp_settings_section">
                                 <div class="mp_settings_box">
@@ -153,11 +156,13 @@
                                         </div>
                                     </div>
                                     <div class="mp_settings_option_box">
-                                        <div class="mp_settings_option"><div class="mp_settings_option">
-                                            <button class="mp_ellipsis" @click>
-                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-                                            </button>
-                                        </div></div>
+                                        <div class="mp_settings_option">
+                                            <div class="mp_settings_option">
+                                                <button class="mp_ellipsis" @click>
+                                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +170,18 @@
 
                         <!-- CHAT SECTION MESSAGES -->
                         <div class="messages_section_box">
-                            <div></div>
+                            <div class="messages_section_flex">
+                                <div class="message" 
+                                v-for="(messages, index) in activeUser.messages"
+                                :class="{sent: messages.status === 'sent', received: messages.status ==='received'}">
+                                <div class="messages_box">{{messages.text}}<div class="timestamp">
+                                    <span>09:30</span>
+                                </div></div>
+                                
+                                
+                                </div>
+                                
+                            </div>
                         </div>
 
                         <!-- CHAT SECTION WRITING -->
@@ -193,10 +209,10 @@
                                 <div class="mw_right_mic">
                                     <div>
                                         <button>
-                                        <i class="fa fa-microphone" aria-hidden="true"></i>
-                                    </button>
+                                            <i class="fa fa-microphone" aria-hidden="true"></i>
+                                        </button>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </footer>

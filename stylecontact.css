@@ -40,7 +40,7 @@ body{
     flex: 30%;
     height: inherit;
     overflow: hidden;
-    background-color: lightcyan;
+    background-color: rgb(255, 255, 255);
     min-width: 260px;
 }
 .ContactsPanel_box{
@@ -62,17 +62,15 @@ body{
     padding: 10px 16px;
 }
 .box_user{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-.box2_user{
     height: 40px;
     width: 40px;
     cursor: pointer;
 }
+/* .box2_user{
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+} */
 .user_section{
     flex-grow: 1;
 }
@@ -152,12 +150,13 @@ body{
     width: 100%;
     top: 7px;
     align-items: center;
-    height: 35px;
+    height: 40px;
     background-color: #fff;
     border-radius: 18px;
     outline: none;
     overflow: hidden;
     font-size: 14px;
+    border: none;
 }
 
 button{

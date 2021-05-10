@@ -2,20 +2,17 @@ const app = new Vue({
     el: "#app",
     data: {
         usersList: globalUsersList,
-        activeUser: 0
+        activeUser: "null"
     },
     // computed:{
 
     // },
     methods:{
-        getUserPropic(avatar){
-            return ``;
-        },
         onUserClick(user){
             this.activeUser = user;
         }
     },
-    // mounted:{
-
-    // }
+    mounted(){
+        this.activeUser = this.userList[0]
+    }
 })
