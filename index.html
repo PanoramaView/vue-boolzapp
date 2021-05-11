@@ -74,14 +74,23 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Search Contacts Input Box -->
                         <div tabindex="-1" class="searchInput_section">
                             <div class="searchInput_section_box">
                                 <button class="searchButton" @click>
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
                                 <div class="searchInput_box">
-                                    <input class="searchInput" placeholder="Search or start new chat" type="text"
-                                        v-model="searchInput" @change="changeInput">
+                                    <input class="searchInput" type="text"
+                                    placeholder="Search or start new chat" 
+                                    v-model="searchInput" 
+                                    @keyup.esc="searchInput = ''">
+
+                                    <!-- Quando scrivi in Input compare una X -->
+                                    <a href="#" class="btn btn-link" v-if="searchInput" @click="searchInput = ''">
+                                        <i class="fas fa-times"></i>
+                                    </a>
                                 </div>
 
                             </div>
@@ -93,8 +102,10 @@
                                 <div class="contactslist_box2">
                                     <div class="contacts_list">
                                         <!-- SINGLE CHAT -->
-                                        <div class="contact_box " v-for="(user, index) in usersList"
-                                            @click="onUserClick(user)">
+                                        <div class="contact_box" 
+                                        :class="{selected: user.avatar === activeUser.avatar}"
+                                        v-for="(user, index) in (filteredContactList)"
+                                        @click="onUserClick(user)">
                                             <div class="contact_box2">
                                                 <div class="contact_box_left ">
                                                     <div class="contact_propic_box">
@@ -214,7 +225,7 @@
                                     <div class="mw_left_options_flex">
                                         <div class="mw_emoji_box">
                                             <button>
-                                                <i class="fa fa-smile-o" aria-hidden="true"></i>
+                                                <i class="far fa-laugh"></i>
                                             </button>
                                         </div>
                                         <div class="mw_attach_box">

@@ -152,6 +152,7 @@
     outline: none;
     overflow: hidden;
     font-size: 14px;
+    color: rgb(0 0 0 / 80%);
 }
 .mw_right_mic > div{
     padding: 8px 10px;

@@ -151,7 +151,7 @@ body{
 }
 .searchInput_section_box{
     background-color: #f6f6f6;
-    border-bottom: 1px solid #242d32;
+    /* border-bottom: 1px solid #242d32; */
     position: relative;
     z-index: 100;
     flex: 1;
@@ -172,6 +172,7 @@ body{
 }
 .searchInput_box{
     font-size: inherit;
+    display: flex;
 }
 .searchInput{
     padding-left: 65px;
@@ -185,6 +186,16 @@ body{
     overflow: hidden;
     font-size: 14px;
     border: none;
+    color: rgb(0 0 0 / 65%);
+}
+.btn-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.btn-link i {
+    color: rgb(0 0 0 / 35%);
 }
 
 button{
@@ -322,5 +333,7 @@ i {
     color: #919191;
 }
 
-
+.selected{
+    background-color: rgb(205, 205, 205);
+}
 

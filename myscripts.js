@@ -4,15 +4,20 @@ const app = new Vue({
         usersList: globalUsersList,
         activeUser: "null",
         inputMessage: "",
-        searchInput: "",
+        searchInput: ""
     },
     computed:{
         activeUserLastAccess(){
 
         },
         filteredContactList(){
-            
-        }
+            const filteredData = this.usersList.filter((x) => {
+                //return element.name.toLowerCase().includes(this.searchText.toLowerCase());
+                return x.name.toLowerCase().startsWith(this.searchInput.toLowerCase());
+            });
+
+            return filteredData;
+        },
     },
     methods:{
         onUserClick(user){
