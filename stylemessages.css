@@ -160,7 +160,7 @@
 }
 .empty_panel{
     height: 100%;
-    background-color: rgb(223, 223, 223);
+    background-color: rgba(15, 207, 63, 0.411);
     display: flex;
 }
 .empty_panel div{
@@ -170,9 +170,10 @@
 }
 .messages_section_flex{
     padding-bottom: 8px;
+    padding-top: 8px;
 }
 .message{
-    margin-bottom: 2px;
+    margin-bottom: 10px;
     border-radius: 7.5px;
     position: relative;
     display: flex;
@@ -194,12 +195,17 @@
 .received{
 }
 .messages_box{
-    background-color: white;
     padding: 9px 55px 9px 9px;
     border-radius: 7.5px;
     box-shadow: 0 1px .5px rgba(var(--shadow-rgb),.13);
     position: relative;
     z-index: 200;
+}
+.sent .messages_box{
+    background-color: #dcf8c6;
+}
+.received .messages_box{
+    background-color: white;
 }
 .sent .timestamp{
     position: absolute;

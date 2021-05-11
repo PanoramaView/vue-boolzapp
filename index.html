@@ -10,15 +10,20 @@
     <!-- FRAMEWORK -->
     <link rel="stylesheet" href="framework.css">
     <!-- https://fontawesome.com/v4.7.0/icons/ -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <!-- MyCSS -->
     <link rel="stylesheet" href="stylecontact.css">
     <link rel="stylesheet" href="stylemessages.css">
     <link rel="stylesheet" href="scrollbar.css">
     <!-- Vue JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <title>Boolzapp</title>
-
+    <!-- moment js -->
+    <script src="moment.js"></script>
+    <script>
+        moment().format();
+    </script>
 </head>
 
 <body>
@@ -35,24 +40,38 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="settings_section border">
+                            <div class="settings_section">
                                 <div class="settings_box">
                                     <div class="settings_option_box">
-                                        <div class="settings_option"><span></span></div>
+                                        <div class="settings_option">
+                                            <i class="fas fa-circle-notch"></i>
+                                        </div>
                                     </div>
                                     <div class="settings_option_box">
-                                        <div class="settings_option"><span></span></div>
+                                        <div class="settings_option">
+                                            <i class="fas fa-comment-dots"></i>
+                                        </div>
                                     </div>
                                     <div class="settings_option_box">
-                                        <div class="settings_option"><span></span></div>
+                                        <div class="settings_option">
+                                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </header>
                         <div class="Getnotified_box">
                             <div>
-                                <div class="Getnotified_left"></div>
-                                <div class="Getnotified_right"></div>
+                                <div class="Getnotified_left">
+                                    <div class="bell_box">
+                                        <i class="fas fa-bell-slash fa-lg"></i>
+                                    </div>
+                                    
+                                </div>
+                                <div class="Getnotified_right">
+                                    <strong>Ricevi notifiche di nuovi messaggi</strong>
+                                    <a href="#">Attiva notifiche desktop <i class="fas fa-chevron-right"></i> </a>
+                                </div>
                             </div>
                         </div>
                         <div tabindex="-1" class="searchInput_section">
@@ -61,7 +80,8 @@
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
                                 <div class="searchInput_box">
-                                    <input class="searchInput" placeholder="Search or start new chat" type="text">
+                                    <input class="searchInput" placeholder="Search or start new chat" type="text"
+                                        v-model="searchInput" @change="changeInput">
                                 </div>
 
                             </div>
@@ -121,11 +141,14 @@
 
                 <!-- CHAT MESSAGES PANEL -->
                 <div class="ChatPanel">
-                    <!-- <div class="empty_panel" v-if="activeUser== 'null'">
+                    <div class="empty_panel" v-if="activeUser== 'null'">
                         <div>
-                            Keep your phone connected
+                            Keep your phone connected with Boolzapp!
+                            <br>
+                            <br>
+                            (select a chat)
                         </div>
-                    </div> -->
+                    </div>
                     <div class="messages_section">
 
                         <!-- CHAT SECTION HEADER -->
@@ -171,16 +194,16 @@
                         <!-- CHAT SECTION MESSAGES -->
                         <div class="messages_section_box">
                             <div class="messages_section_flex">
-                                <div class="message" 
-                                v-for="(messages, index) in activeUser.messages"
-                                :class="{sent: messages.status === 'sent', received: messages.status ==='received'}">
-                                <div class="messages_box">{{messages.text}}<div class="timestamp">
-                                    <span>09:30</span>
-                                </div></div>
-                                
-                                
+                                <div class="message" v-for="(messages, index) in activeUser.messages"
+                                    :class="{sent: messages.status === 'sent', received: messages.status ==='received'}">
+                                    <div class="messages_box">{{messages.text}}<div class="timestamp">
+                                            <span>09:30</span>
+                                        </div>
+                                    </div>
+
+
                                 </div>
-                                
+
                             </div>
                         </div>
 
@@ -203,7 +226,8 @@
                                 </div>
                                 <div class="mw_center_writing">
                                     <div class="mw_searchInput_box">
-                                        <input class="mw_searchInput" placeholder="Type a message" type="text">
+                                        <input class="mw_searchInput" placeholder="Type a message" type="text"
+                                            @key.enter="pushNewText" v-model="inputMessage">
                                     </div>
                                 </div>
                                 <div class="mw_right_mic">
