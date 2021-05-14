@@ -36,7 +36,7 @@ const app = new Vue({
             return console.log(index)
         }
     },
-    mounted(){
-        this.activeUser = this.userList[0]
-    }
+    // mounted(){
+    //     this.activeUser = this.userList[0];
+    // }
 })

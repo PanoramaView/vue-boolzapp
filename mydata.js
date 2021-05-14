@@ -172,7 +172,7 @@ const globalUsersList = [
         ],
     },
     {
-        name: 'io',
+        name: 'iota',
         avatar: '_io',
         visible: true,
         messages: [
